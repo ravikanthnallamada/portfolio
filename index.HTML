@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ravikanth — Portfolio</title>
+  <meta name="description" content="Clean, light-colored personal portfolio template." />
+  <style>
+    :root{
+      --bg:#fbfdff;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent-1:#e6f3ff; /* very light blue */
+      --accent-2:#f7fff9; /* mint */
+      --primary:#0f172a; /* heading */
+      --glass: rgba(255,255,255,0.6);
+      --radius:14px;
+      --shadow: 0 8px 25px rgba(16,24,40,0.06);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#f7fbff);color:var(--primary);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:36px auto;padding:28px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#cfe9ff,#eaf9ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#0456a4}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{padding:8px 12px;border-radius:10px;font-weight:600;color:var(--muted)}
+    nav a.cta{background:var(--accent-1);color:#0456a4}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;margin-top:28px;align-items:center}
+    .card{background:var(--card);padding:28px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .intro h1{margin:0 0 12px;font-size:34px;line-height:1.05}
+    .intro p{margin:0;color:var(--muted)}
+    .buttons{margin-top:18px;display:flex;gap:12px}
+    .btn{padding:10px 14px;border-radius:10px;font-weight:700;border:1px solid transparent}
+    .btn.primary{background:#0456a4;color:white}
+    .btn.ghost{background:transparent;border-color:rgba(4,86,164,0.08);color:var(--primary)}
+
+    /* Sidebar profile */
+    .profile{display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center}
+    .avatar{width:130px;height:130px;border-radius:20px;background:linear-gradient(135deg,#fff,#f2fbff);display:flex;align-items:center;justify-content:center;font-size:34px;color:#0456a4;font-weight:700;box-shadow:0 6px 18px rgba(4,86,164,0.06)}
+    .meta{color:var(--muted);font-size:14px}
+
+    /* Sections */
+    section{margin-top:26px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{padding:18px;border-radius:12px;background:linear-gradient(180deg,var(--accent-2),#ffffff);border:1px solid rgba(8,24,48,0.03)}
+    .project h3{margin:0 0 8px}
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .chip{padding:8px 10px;border-radius:999px;background:var(--accent-1);font-weight:600;font-size:13px}
+
+    footer{margin:36px 0;text-align:center;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:960px){
+      .hero{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      .grid-3{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start}
+      nav{width:100%;justify-content:space-between}
+    }
+
+    /* small utilities */
+    .muted{color:var(--muted)}
+    .small{font-size:13px}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">RN</div>
+        <div>
+          <div style="font-weight:800">Ravikanth N</div>
+          <div class="small muted">B.Tech · Java / ML · Open to internships</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#resume">Resume</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <div class="card intro">
+        <h1>Hi — I'm Ravikanth.<br /><span class="muted" style="font-weight:600">I build Java apps, train ML models, and ship backend + web prototypes.</span></h1>
+        <p class="muted">Final-year Computer Science student with experience in Java development, ML projects, and edge-AI deployments. I enjoy turning research prototypes into usable tools.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#projects">See my work</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+
+        <section id="projects">
+          <h2 style="margin-top:22px">Selected Projects</h2>
+          <div class="grid-3" style="margin-top:12px">
+            <article class="project">
+              <h3>Drone Detection System</h3>
+              <div class="small muted">YOLOv5 · PyTorch · OpenCV · Django dashboard</div>
+              <p class="muted small" style="margin-top:8px">Real-time detection, dataset augmentation & edge deployment for border surveillance.</p>
+            </article>
+            <article class="project">
+              <h3>Student Performance Prediction</h3>
+              <div class="small muted">Pandas · scikit-learn · Streamlit</div>
+              <p class="muted small" style="margin-top:8px">Model comparison (RF / Decision Tree / LR) and simple UI for predicted outcomes.</p>
+            </article>
+            <article class="project">
+              <h3>Student Management System</h3>
+              <div class="small muted">Java · SQL · HTML/CSS</div>
+              <p class="muted small" style="margin-top:8px">CRUD system with JS validation and Git-based workflow.</p>
+            </article>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="card profile">
+        <div class="avatar">RN</div>
+        <div style="font-weight:700">Ravikanth N</div>
+        <div class="meta">Computer Science • Sreyas Institute • Graduating 2025</div>
+        <div style="width:100%;display:flex;gap:8px;flex-direction:column;margin-top:8px">
+          <a class="btn primary" href="#contact">Email</a>
+          <a class="btn ghost" href="#resume">Download Resume</a>
+        </div>
+
+        <div style="width:100%;margin-top:12px;text-align:left">
+          <div class="small muted">Quick info</div>
+          <div style="margin-top:8px" class="skills">
+            <span class="chip">Java</span>
+            <span class="chip">SQL</span>
+            <span class="chip">Python</span>
+            <span class="chip">PyTorch</span>
+            <span class="chip">Django</span>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <section id="skills" class="card">
+      <h2>Skills & Tools</h2>
+      <div style="display:flex;gap:24px;flex-wrap:wrap;margin-top:12px">
+        <div style="flex:1;min-width:220px">
+          <h4 style="margin:0 0 6px">Programming</h4>
+          <div class="muted small">Java · Python · JavaScript · SQL</div>
+        </div>
+        <div style="flex:1;min-width:220px">
+          <h4 style="margin:0 0 6px">ML & Tools</h4>
+          <div class="muted small">PyTorch · scikit-learn · OpenCV · YOLOv5</div>
+        </div>
+        <div style="flex:1;min-width:220px">
+          <h4 style="margin:0 0 6px">Other</h4>
+          <div class="muted small">Git · Streamlit · Django · Linux</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact</h2>
+      <p class="muted small">Email: <a href="mailto:ravikanthnallamada@gmail.com">ravikanthnallamada@gmail.com</a> · LinkedIn: <a href="https://www.linkedin.com/in/ravikanthnallamada/" target="_blank">/in/ravikanthnallamada</a></p>
+      <form style="margin-top:12px;display:flex;gap:12px;flex-direction:column;max-width:560px">
+        <input placeholder="Your name" style="padding:10px;border-radius:10px;border:1px solid rgba(6,10,20,0.05)" />
+        <input placeholder="Your email" style="padding:10px;border-radius:10px;border:1px solid rgba(6,10,20,0.05)" />
+        <textarea placeholder="Message" rows="4" style="padding:10px;border-radius:10px;border:1px solid rgba(6,10,20,0.05)"></textarea>
+        <div style="display:flex;gap:10px">
+          <button class="btn primary" type="button">Send message</button>
+          <button class="btn ghost" type="button">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="resume" class="card">
+      <h2>Resume</h2>
+      <p class="muted small">Replace the button below with your hosted resume or file path. You uploaded a resume to this chat — when you host it (GitHub, Drive, or your site) use that link here.</p>
+      <div style="margin-top:10px"><a class="btn primary" href="#">Download PDF</a></div>
+    </section>
+
+    <footer>
+      Built with a light, airy palette • © Ravikanth — <span class="muted">Good luck with your applications!</span>
+    </footer>
+  </div>
+  <script>
+    // small UX: smooth scrolling for in-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click', e=>{
+      e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+    }));
+  </script>
+</body>
+</html>
